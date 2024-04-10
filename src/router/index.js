@@ -17,7 +17,20 @@ const router = createRouter({
     {
       path: "/home",
       name: "Layout",
+      redirect: "/clients-summary",
       component: () => import("@/views/layout.vue"),
+      children: [
+        {
+          path: "/clients-summary",
+          name: "clients",
+          component: () => import("@/components/Clients/ClientSummary/clientsView.vue"),
+        },
+        {
+          path: "/client-details",
+          name: "clientdetails",
+          component: () => import("@/components/Clients/ClientSummary/SpecificClient.vue"),
+        },
+      ],
     },
   ],
 });

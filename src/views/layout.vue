@@ -1,11 +1,8 @@
 <script setup lang="js">
 import navbar from "@/components/Layout/navbar.vue"
-import footer from "@/components/Layout/footer.vue"
-import sidebar from "@/components/Layout/sidebar.vue"
 </script>
 <template>
   <v-layout class="rounded rounded-md">
-    <!-- <sidebar></sidebar> -->
     <navbar></navbar>
 
     <v-main class="d-flex align-center justify-center">

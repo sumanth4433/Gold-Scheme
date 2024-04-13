@@ -5,7 +5,7 @@ import { defineProps } from "vue";
 
 onMounted(() => {
   // I've not fine tuned these values.
-  // setTimeout(() => exportToPDF(), 1000);
+  setTimeout(() => exportToPDF(), 1000);
 });
 const props=defineProps(["client_details",'selected_item'])
 function exportToPDF() {

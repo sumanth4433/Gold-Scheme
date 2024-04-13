@@ -21,7 +21,7 @@
           <v-dialog v-model="dialog" max-width="500px">
             <template v-slot:activator="{ props }">
               <v-btn variant="tonal" color="primary" dark v-bind="props">
-                Add New Client
+                Client
               </v-btn>
             </template>
             <v-card width="800px">
@@ -250,20 +250,12 @@
         </p>
       </template>
       <template v-slot:item.actions="{ item }">
-        <!-- <v-btn size="small" class="me-2" color="success" variant="tonal">
-          <v-icon
-            icon="fas fa-cash-register"
-            class="me-2"
-            size="small"
-          ></v-icon>
-          Payh
-        </v-btn> -->
         <v-btn
           size="small"
           color="warning"
           small
           variant="tonal"
-          @click="routeClinet()"
+          @click="routeClinet(item)"
         >
           <v-icon size="small" icon="fas fa-file-invoice" class="me-2"></v-icon>
           View
@@ -351,25 +343,7 @@ const defaultItem = ref({
       adhaar_number: '',
       address: ''
     });
-const desserts=ref([{
-address:"JNTUA COLLEGE OF ENGINEERING ANANTAPUR\nJNTUA College , ellora hostel , room no :202",
-adhaar_no:"6587685768",
-full_name:"Andhili Saikumar",
-maritial_status:"Married",
-mobile_no:"06302499458",
-spouce:"sai",
-spouce_mobile_no:"879687968"
-},{
-address:"jellora hostel , room no :202",
-adhaar_no:"6587685768",
-full_name:"Anjaneyulu Titta",
-maritial_status:"Married",
-mobile_no:"06302499458",
-spouce:"terif",
-spouce_mobile_no:"879687968"
-}]);
-
-
+const desserts=ref([]);
 onMounted(()=>{
   getclients()
 })
@@ -398,8 +372,14 @@ watch(dialog,(val)=>{
 watch(dialogDelete,(val)=>{
     val || closeDelete()
 })
-const routeClinet=()=>{
-  router.push("/client-details")
+const routeClinet=(item)=>{
+  router.push({
+    path:"/client-details",
+    query:{
+      client_id:item.client_id,
+      id:item.id
+    }
+  })
 }
 const editItem = (item) => {
   editedIndex.value = desserts.value.indexOf(item);

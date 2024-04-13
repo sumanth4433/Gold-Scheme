@@ -1,6 +1,7 @@
 import request from "@/utils/request";
 const UserbaseUrl = `${import.meta.env.VITE_BASEURL}/user`;
 const clientbaseUrl = `${import.meta.env.VITE_BASEURL}/client`;
+const paymentbaseUrl = `${import.meta.env.VITE_BASEURL}/payment`;
 export default {
   // --------------------------------------AUTHENTICATION MODULE----------------------------------//
   Login(data) {
@@ -42,6 +43,26 @@ export default {
       url: `${clientbaseUrl}/update/${data.client_id}`,
       method: "PUT",
       data: data,
+    });
+  },
+  getclientDetail(id) {
+    return request({
+      url: `${clientbaseUrl}/get/${id}`,
+      method: "GET",
+    });
+  },
+  // -----------------------get payment details----------------------------------------
+  gettxnDetail(id) {
+    return request({
+      url: `${paymentbaseUrl}/get/${id}`,
+      method: "GET",
+    });
+  },
+  Addpayment(data) {
+    return request({
+      url: `${paymentbaseUrl}/add`,
+      method: "POST",
+      data:data
     });
   },
 };

@@ -32,3 +32,7 @@ export const validations = {
       /[0-9]/.test(v) ? true : "Password must contain at least one number.",
   ],
 };
+
+export const FieldRequired = (val) => {
+  return [(v) => (v ? true : `${val} is required`),];
+};

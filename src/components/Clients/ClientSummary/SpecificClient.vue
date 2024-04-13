@@ -2,6 +2,10 @@
   <ViewsWrapper>
     <v-data-table :headers="headersData" :items="desserts">
       <template v-slot:top>
+        <span class="float-right">
+          
+        </span>
+
         <v-toolbar color="rgb(255 245 193)" flat class="pa-6">
           <v-div>
             <h3 class="font-weight-bold">Andhili Saikumar</h3>
@@ -10,7 +14,18 @@
           </v-div>
           <v-spacer></v-spacer>
           <v-divider inset vertical></v-divider>
-          <v-spacer></v-spacer>
+          <v-btn
+            class="ms-3 me-2 float-right"
+            color="success"
+            variant="tonal"
+          >
+            <v-icon
+              icon="fas fa-cash-register"
+              class="me-2"
+              size="small"
+            ></v-icon>
+            Pay
+          </v-btn>
           <div>
             <h3>
               Total Amount Paid:

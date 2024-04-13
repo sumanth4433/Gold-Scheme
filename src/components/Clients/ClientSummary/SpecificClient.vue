@@ -231,7 +231,7 @@ const save = async () => {
 }
 const gettxnDetail=async()=>{
     try {
-      const responseData=await userSvc.gettxnDetail(router.query.id)
+      const responseData=await userSvc.gettxnDetail(router.query.client_id)
       if(responseData.data.status_code==200){
         desserts.value=responseData.data.data[0].payment_list
       }else{

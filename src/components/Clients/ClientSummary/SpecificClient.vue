@@ -79,6 +79,7 @@
                     v-model="editedItem.rate"
                     label="Rate"
                     type="number"
+                    @input="calculateGold(editedItem.rate)"
                     :rules="FieldRequired('Rate')"
                     placeholder="Enter Rate"
                   ></v-text-field>
@@ -185,6 +186,9 @@ const desserts=ref([]);
 const openPay=()=>{
 paydialog.value=true
 editedItem.value = { ...defaultItem.value };
+}
+const calculateGold=(val)=>{
+  editedItem.value.gold_gain=(editedItem.value.amount/val).toFixed(2)
 }
 const recieptdiag=(item)=>{
   recieptdialog.value=true

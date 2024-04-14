@@ -4,10 +4,10 @@
       <v-img
         :src="logo"
         class="gold_logo_avatar mx-auto"
-        height="80"
-        width="80"
+        height="90"
+        width="90"
       ></v-img>
-      <h2 class="font-weight-bold text-center ms-3">Anand's Jewelry</h2>
+      <h2 class="font-weight-bold text-center ms-5">AnanD's Jewelry</h2>
     </template>
 
     <template v-slot:append>

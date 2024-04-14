@@ -288,7 +288,7 @@ const search=ref("")
 const dialogDelete = ref(false);
 const headersData = ref([
 {
-    title: 'Client Id',
+    title: 'Client ID',
     align: 'start',
     sortable: false,
     key: 'client_id',
@@ -299,11 +299,11 @@ const headersData = ref([
     sortable: false,
     key: 'full_name',
   },
-  { title: 'contact Details', key: 'mobile_number' },
+  { title: 'Contact Details', key: 'mobile_number' },
   { title: 'Adhaar Number', key: 'adhaar_number' },
   { title: 'Address', key: 'address' ,width:"300px"},
   { title: 'Martial Status', key: 'martial_status' },
-  { title: 'Spouse Details', key: 'spouse_name', sortable: false },
+  // { title: 'Spouse Details', key: 'spouse_name', sortable: false },
   { title: 'Hold Gold', key: 'total_gold', sortable: false },
   { title: 'Paid Amount', key: 'total_amount', sortable: false },
   { title: 'No of payments', key: 'no_of_payments', sortable: false },

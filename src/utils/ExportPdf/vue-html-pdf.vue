@@ -10,7 +10,7 @@ onMounted(() => {
 const props=defineProps(["client_details",'selected_item'])
 function exportToPDF() {
   html2pdf(document.getElementById("pdf"), {
-    filename: "PaymentReciept.pdf",
+    filename:  props.client_details.client_id+"_"+props.selected_item.payment_number+".pdf",
   });
 }
 </script>
@@ -39,8 +39,8 @@ function exportToPDF() {
               src="@/assets/images/goldLogo.png"
               alt="Title Logo"
               class="gold_logo_avatar"
-              height="85"
-              width="85"
+              height="80"
+              width="80"
             />
           </v-col>
           <v-col cols="6" class="text-left">
@@ -56,7 +56,11 @@ function exportToPDF() {
         <v-row>
           <v-col cols="12" sm="6">
             <h2 class="mb-2">Customer Details</h2>
-            <div class="detail">
+            <div class="detail" cols="6">
+              <span class="key">ClientID:</span>
+              <span class="value">{{ props.client_details.client_id }}</span>
+            </div>
+            <div class="detail" cols="6">
               <span class="key">Full Name:</span>
               <span class="value">{{ props.client_details.full_name }}</span>
             </div>
@@ -95,14 +99,14 @@ function exportToPDF() {
                   </tr>
                   <tr>
                     <td style="width: 50%">Rate</td>
-                    <td style="width: 50%" class="font-weight-bold">{{ props.selected_item.rate }}/gm</td>
+                    <td style="width: 50%" class="font-weight-bold">RS.{{ props.selected_item.rate }}/gm</td>
                   </tr>
                   <tr>
                     <td style="width: 50%">Gold Obtained</td>
-                    <td style="width: 50%" class="font-weight-bold">{{ props.selected_item.gold }}gm</td>
+                    <td style="width: 50%" class="font-weight-bold">{{ props.selected_item.gold }} gms</td>
                   </tr>
                   <tr>
-                    <td style="width: 50%">Date</td>
+                    <td style="width: 50%">Paid Date</td>
                     <td style="width: 50%" class="font-weight-bold">
                       {{ props.selected_item.date_of_payment }}
                     </td>

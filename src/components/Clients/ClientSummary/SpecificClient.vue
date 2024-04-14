@@ -6,9 +6,9 @@
 
         <v-toolbar color="rgb(255 245 193)" flat class="pa-6">
           <div>
-            <h3 class="font-weight-bold">{{ client_details.full_name }}</h3>
-            <h3>mobile:{{ client_details.mobile_number }}</h3>
-            <h3>Adhaar No:{{ client_details.adhaar_number }}</h3>
+            <h3 class="font-weight-bold">{{ client_details.full_name }}({{client_details.client_id}})</h3>
+            <h3>Mobile: {{ client_details.mobile_number }}</h3>
+            <h3>Adhaar No: {{ client_details.adhaar_number }}</h3>
           </div>
           <v-spacer></v-spacer>
           <v-divider inset vertical></v-divider>
@@ -35,7 +35,7 @@
             <h3>
               Gold Obtained:
               <span class="font-weight-bold"
-                >{{ client_details.total_gold }}gms</span
+                >{{ client_details.total_gold }} gms</span
               >
             </h3>
           </div>
@@ -58,7 +58,7 @@
             icon="fas fa-cash-register"
           ></v-icon
           ><span class="ms-2 text-h6"
-            >Add Payment for : {{ client_details.full_name }}</span
+            >Add Payment For : {{ client_details.full_name }}</span
           >
         </v-toolbar>
         <v-card-text>
@@ -149,20 +149,20 @@ const recieptdialog=ref(false)
 const selected_item=ref({})
 const AlertStore=useAlertsStore()
 const router = useRoute()
-  const headersData = ref([
+const headersData = ref([
     {
-      title: 'Pay Id',
+      title: 'Pay ID',
       align: 'start',
       sortable: false,
       key: 'payment_number',
     },
     { title: 'Amount Paid(RS)', key: 'amount' },
-    { title: 'rate (/gm)', key: 'rate' },
+    { title: 'Rate (/gm)', key: 'rate' },
     { title: 'Gold Obtained(gm)', key: 'gold' },
-    { title: 'Date', key: 'date_of_payment' ,width:"300px"},
+    { title: 'Paid Date', key: 'date_of_payment' ,width:"300px"},
     { title: 'Actions', key: 'actions', sortable: false },
   ]);
-  const editedItem = ref({
+const editedItem = ref({
     "client_id": 0,
   "rate": 0,
   "amount": 0,
@@ -177,7 +177,7 @@ const defaultItem = ref({
   "gold_gain": 0,
   "date_of_payment": null
     });
-  const desserts=ref([]);
+const desserts=ref([]);
   onMounted(()=>{
     getclientDetail()
     gettxnDetail()

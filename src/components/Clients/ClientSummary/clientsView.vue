@@ -73,6 +73,18 @@
                         ></v-text-field>
                       </v-col>
 
+                      <!-- Food Type -->
+                      <v-col cols="12" md="6" sm="12">
+                        <v-select
+                          v-model="editedItem.food_type"
+                          :items="['Veg', 'Non-Veg']"
+                          :rules="FieldRequired('FoodType')"
+                          label="Food Type"
+                          placeholder="Enter Food Type"
+                        ></v-select>
+                      </v-col>
+
+
                       <!-- Martial Status -->
                       <v-col cols="12" md="6" sm="12">
                         <v-select
@@ -300,8 +312,9 @@ const headersData = ref([
     key: 'full_name',
   },
   { title: 'Contact Details', key: 'mobile_number' },
-  { title: 'Adhaar Number', key: 'adhaar_number' },
+  // { title: 'Adhaar Number', key: 'adhaar_number' },
   { title: 'Address', key: 'address' ,width:"300px"},
+  { title: 'Food Type', key: 'food_type' },
   { title: 'Martial Status', key: 'martial_status' },
   // { title: 'Spouse Details', key: 'spouse_name', sortable: false },
   { title: 'Hold Gold', key: 'total_gold', sortable: false },
@@ -315,6 +328,7 @@ const editedItem = ref({
       last_name: '',
       gender: 'Male',
       dob: '',
+      food_type: 'Veg',
       martial_status: 'Single',
       marriage_date: null,
       spouse_name: '',
@@ -332,6 +346,7 @@ const defaultItem = ref({
       last_name: '',
       gender: 'Male',
       dob: '',
+      food_type: 'Veg',
       martial_status: 'Single',
       marriage_date: null,
       spouse_name: '',

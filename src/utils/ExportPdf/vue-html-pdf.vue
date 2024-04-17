@@ -44,9 +44,9 @@ function exportToPDF() {
             />
           </v-col>
           <v-col cols="6" class="text-left">
-            <h2>ANAND'S JWELERY</h2>
+            <h2>ANAND'S JEWELRY</h2>
             <h5>
-              Anand jwelery 12-345, Gold Tower Sarvodaya Nagar, Nellore Andhra
+              Anand jewelry, Nellore Andhra
               Pradesh, 524001 India
             </h5>
           </v-col>
@@ -70,12 +70,12 @@ function exportToPDF() {
                 props.client_details.mobile_number
               }}</span>
             </div>
-            <div class="detail">
+            <!-- <div class="detail">
               <span class="key">Aadhaar Number:</span>
               <span class="value">{{
                 props.client_details.adhaar_number
               }}</span>
-            </div>
+            </div> -->
             <div class="detail">
               <span class="key">Address:</span>
               <span class="value">{{ props.client_details.address }}</span>
@@ -123,7 +123,7 @@ function exportToPDF() {
         <v-row class="mt-6">
           <v-col cols="12">
             <p class="text-center">
-              Thank you for choosing Anand's jwelery ! Your exquisite taste is
+              Thank you for choosing Anand's jewelry ! Your exquisite taste is
               reflected in your purchase. We're here for all your future jewelry
               needs!
             </p>
